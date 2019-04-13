@@ -1,0 +1,50 @@
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">My Movie Database</h1>
+    <p class="lead text-muted">My Home videos I can watch anytime. All of them is legal of course.
+    </p>
+    <div>
+      <div class="text-center">
+        <form class="form-inline my-2 my-lg-0 justify-content-center">
+          <input class="form-control mr-sm-2" [(ngModel)]="searchTerm" name="queueNameInput"
+                 type="text" placeholder="Full-text search" required>
+          <button class="btn btn-primary" (click)="onSearch()" type="submit">Search</button>
+        </form>
+      </div>
+      <br/>
+    </div>
+  </div>
+</section>
+<div class="container">
+  <div class="row top-buffer" *ngFor="let movie of movies">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">{{movie.title}} ({{movie.year}})</h4>
+          <hr/>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <p><b>Genre:</b> {{movie.genre}} </p>
+              </div>
+              <div class="col-md-6">
+                <p><b>Cast:</b> {{movie.cast}} </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <p><b>Director:</b> {{movie.director}} </p>
+              </div>
+              <div class="col-md-6">
+                <p><b>Notes:</b> {{movie.notes}} </p>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary" (click)="playMovie(movie)">Watch Movie</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
