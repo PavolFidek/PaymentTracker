@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mmdb.iml" filepath="$PROJECT_DIR$/mmdb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/server/mmdb-server.iml" filepath="$PROJECT_DIR$/server/mmdb-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spt.iml" filepath="$PROJECT_DIR$/spt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server/spt-server.iml" filepath="$PROJECT_DIR$/server/spt-server.iml" />
     </modules>
   </component>
 </project>

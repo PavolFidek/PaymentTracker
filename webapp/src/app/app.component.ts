@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Movie} from './movie.model';
+import {Movie, User} from './movie.model';
 import {MovieService} from './movie.service';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {MoviePlayerComponent} from './movie-player/movie-player.component';
@@ -14,13 +14,14 @@ export class AppComponent implements OnInit {
   searchTerm: string;
 
   movies: Movie[];
+  user: User;
 
   constructor(private movieService: MovieService, private modalService: NgbModal) {
 
   }
 
   ngOnInit(): void {
-    this.movieService.listMovies().subscribe((movies) => this.movies = movies)
+    this.movieService.listMovies().subscribe((movies) => this.user = movies)
   }
 
   onSearch() {

@@ -10,3 +10,11 @@ export class Movie {
               public genre?: string) {
   }
 }
+
+export interface User {
+  userId: number;
+  firstName: string;
+  lastName: string;
+  login: string;
+  payoutAmount: number;
+}
