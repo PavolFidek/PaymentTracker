@@ -19,8 +19,8 @@ public class UserService {
         return users;
     }
 
-    public User GetUser() {
-        User user = new User(1, "Pavol", "Fidek", "palko", 500.20); //userRepository.findById(userId).get();
+    public User GetUser(int userId) {
+        User user = userRepository.findById(userId).get();
 
         return user;
     }

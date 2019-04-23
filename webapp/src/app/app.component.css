@@ -1,3 +1,28 @@
 .top-buffer { margin-top:20px; }
 
+.home-header {
+  background-color: #20272a;
+  height: 70px;
+}
 
+.header-context {
+  position: absolute;
+  height: 70px;
+  width: 260px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.payment-logo {
+  height: 50px;
+  width: 40px;
+  position: absolute;
+  top: 9px;
+}
+
+.payment-text {
+  position: absolute;
+  color: white;
+  left: 50px;
+  top: 15px;
+}
