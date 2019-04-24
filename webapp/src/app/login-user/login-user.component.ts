@@ -35,12 +35,15 @@ export class LoginUserComponent implements OnInit {
   login() {
     if (this.loginForm.valid) {
       this.projectService.login(this.loginForm.value)
-      .subscribe(res => {
-        // loged
-      },
-      error => {
-        // login failed
-      });
+        .subscribe(res => {
+          // loged
+        },
+          error => {
+            // login failed
+          });
+    } else {
+      this.loginForm.controls.login.markAsDirty({ onlySelf: true });
+      this.loginForm.controls.password.markAsDirty({ onlySelf: true });
     }
   }
 

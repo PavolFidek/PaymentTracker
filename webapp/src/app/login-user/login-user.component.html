@@ -1,10 +1,23 @@
-<p-card class="login-window" header="MEMBER LOGIN" [style]="{width: '360px'}" styleClass="ui-card-shadow">
-    <p-header>
-    </p-header>
-    <div>
-
+<p-card class="login-window" title="MEMBER LOGIN" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+  <p-header>
+  </p-header>
+  <form [formGroup]="this.loginForm">
+    <div class="login-input">
+      <span class="ui-float-label">
+        <input id="login" formControlName="login" name="login" type="text" size="30" pInputText>
+        <label for="float-input">Login</label>
+      </span>
     </div>
-    <p-footer>
-        <button class="login-btn" pButton type="button" label="Login" icon="pi pi-check" (click)="open()"></button>
-    </p-footer>
+
+    <div class="password-input">
+      <span class="ui-float-label">
+        <input id="password" formControlName="password" name="password" type="password" size="30" pInputText>
+        <label for="float-input">Password</label>
+      </span>
+    </div>
+
+  </form>
+  <p-footer>
+    <button pButton class="login-btn" type="button" (click)="login()" icon="fa-check" label="Login"></button>
+  </p-footer>
 </p-card>

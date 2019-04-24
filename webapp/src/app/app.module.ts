@@ -14,8 +14,13 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+// PrimeNG imports
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { AccordionModule } from 'primeng/accordion';
+import { MenuItem } from 'primeng/api';
 
 const appRoutes: Routes = [
   { path: 'register', component: RegisterUserComponent },
@@ -42,6 +47,9 @@ const appRoutes: Routes = [
     CardModule,
     InputTextModule,
     ReactiveFormsModule,
+    MessagesModule,
+    MessageModule,
+    AccordionModule
   ],
   providers: [ ProjectService ],
   bootstrap: [ AppComponent ],
