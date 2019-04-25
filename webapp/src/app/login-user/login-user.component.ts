@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ProjectService } from 'app/project.service';
-import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-user',
@@ -10,11 +10,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginUserComponent implements OnInit {
   public loginForm: FormGroup;
+  public wrongData: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
     private projectService: ProjectService,
-    private toastr: ToastrService
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,16 +38,19 @@ export class LoginUserComponent implements OnInit {
       this.projectService.login(this.loginForm.value)
         .subscribe(res => {
           // loged
+          this.wrongData = false;
+          this.router.navigate(['/dashboard']);
         },
-          error => {
-            // login failed
-          });
+        error => {
+          this.wrongData = true;
+        });
     } else {
       this.loginForm.controls.login.markAsDirty({ onlySelf: true });
       this.loginForm.controls.password.markAsDirty({ onlySelf: true });
     }
   }
 
-  open() {
+  navRegister() {
+    this.router.navigate(['/register']);
   }
 }

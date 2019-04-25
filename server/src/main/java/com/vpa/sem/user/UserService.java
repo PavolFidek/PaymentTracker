@@ -24,4 +24,8 @@ public class UserService {
 
         return user;
     }
+
+    public boolean RegisterNewUser() {
+        return false;
+    }
 }

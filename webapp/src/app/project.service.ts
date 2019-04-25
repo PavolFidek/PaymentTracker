@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { User, LoginData } from './project.model';
+import { User, LoginData, RegisterData } from './project.model';
 
 @Injectable()
 export class ProjectService {
@@ -14,6 +14,9 @@ export class ProjectService {
     return null;
   }
 
+  registerUser(registerData: RegisterData): Observable<boolean> {
+    return null;
+  }
 
   /*
     public listMovies(page: number = 0, size: number = 10): Observable<User> {

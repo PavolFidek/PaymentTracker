@@ -10,3 +10,8 @@ export interface User {
   login: string;
   payoutAmount: number;
 }
+
+export interface RegisterData {
+  login: string;
+  password: string;
+}
