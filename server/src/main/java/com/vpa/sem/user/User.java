@@ -1,5 +1,7 @@
 package com.vpa.sem.user;
 
+import com.vpa.sem.Entities.Role;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,19 +21,34 @@ public class User {
 
     @Column(name = "login")
     private String login;
+    
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "payout_amount")
     private double payoutAmount;
 
+    @OneToOne
+    private Role role;
+
     public User() {
     }
 
-    public User(int userId, String firstName, String lastName, String login, double payoutAmount) {
+    public User(int userId, String firstName, String lastName, String login, double payoutAmount, Role role) {
         this.userId = userId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
         this.payoutAmount = payoutAmount;
+        this.role = role;
+    }
+
+    public Role getRole() {
+        return this.role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public int getUserId() {
@@ -64,6 +81,14 @@ public class User {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public double getPayoutAmount() {
