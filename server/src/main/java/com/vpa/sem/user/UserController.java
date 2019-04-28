@@ -1,11 +1,13 @@
 package com.vpa.sem.user;
 
+import com.vpa.sem.DTOs.LoginDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
 @Controller
+@RequestMapping("api/user")
 public class UserController {
 
     @Autowired
@@ -21,6 +23,12 @@ public class UserController {
     @ResponseBody
     public User GetUser() {
         return userService.GetUser(1);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public boolean LoginUser() {
+        return false;
+        //return userService.loginUser(loginDto);
     }
 
 }

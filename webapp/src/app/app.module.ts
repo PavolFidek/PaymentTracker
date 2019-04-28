@@ -25,8 +25,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 const appRoutes: Routes = [
   { path: 'register', component: RegisterUserComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: '', component: LoginUserComponent },
-  { path: '**', redirectTo: '' }
+  { path: 'userLogin', component: LoginUserComponent },
+  { path: '**', redirectTo: '/userLogin' }
 ];
 
 @NgModule({

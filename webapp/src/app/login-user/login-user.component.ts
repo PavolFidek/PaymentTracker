@@ -43,6 +43,7 @@ export class LoginUserComponent implements OnInit {
         },
         error => {
           this.wrongData = true;
+          alert('Zle udaje');
         });
     } else {
       this.loginForm.controls.login.markAsDirty({ onlySelf: true });

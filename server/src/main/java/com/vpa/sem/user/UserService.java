@@ -1,6 +1,7 @@
 package com.vpa.sem.user;
 
 
+import com.vpa.sem.DTOs.LoginDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,4 +29,12 @@ public class UserService {
     public boolean RegisterNewUser() {
         return false;
     }
+
+    public boolean loginUser(LoginDto loginDto) {
+        String login = loginDto.getLogin();
+        String pass = loginDto.getPassword();
+
+        return true;
+    }
+
 }

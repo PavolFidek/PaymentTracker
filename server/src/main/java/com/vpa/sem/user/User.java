@@ -8,18 +8,19 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private int userId;
 
-    @Column(name = "firstName")
+    @Column(name = "first_name")
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "login")
     private String login;
 
-    @Column(name = "payoutAmount")
+    @Column(name = "payout_amount")
     private double payoutAmount;
 
     public User() {

@@ -5,13 +5,14 @@ import { User, LoginData, RegisterData } from './project.model';
 
 @Injectable()
 export class ProjectService {
+  private userUrl = `api/user`;
 
   constructor(
     private httpClient: HttpClient
   ) { }
 
   login(loginData: LoginData): Observable<boolean> {
-    return null;
+    return this.httpClient.post<any>(`/userLogin`, loginData);
   }
 
   registerUser(registerData: RegisterData): Observable<boolean> {

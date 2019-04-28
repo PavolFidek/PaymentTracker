@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-    @Query("SELECT u FROM Users u WHERE u.login like %keyWord%")
-    User findByName(@Param("keyWord") String userLogin);
+    //@Query("SELECT u FROM Users u WHERE u.login like %keyWord%")
+    //User findByName(@Param("keyWord") String userLogin);
 }
