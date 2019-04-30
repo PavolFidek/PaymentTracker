@@ -26,28 +26,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
    protected void configure(HttpSecurity httpSecurity) throws Exception {
        httpSecurity
                .authorizeRequests()
-                   .antMatchers("/dashboard").permitAll()
-                   .anyRequest().authenticated()
-                   .and()
-               .formLogin()
-                   .loginPage("/userLogin")
-                   //.loginProcessingUrl("/login")
-                   .permitAll()
-                   .and()
-               .logout()
-                   .permitAll();
+                   .antMatchers("/api/user/userLogin", "/api/user/register", "/").permitAll()
+                   .anyRequest().authenticated();
 
        httpSecurity.csrf().disable();
    }
 
-//    @Bean
-//    public AuthenticationManager customAuthenticationManager() throws Exception {
-//        return authenticationManager();
-//    }
-
    @Autowired
    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-       // auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
-       auth.inMemoryAuthentication().withUser("pavol").password("heslo").roles("USER");
+       auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
    }
 }

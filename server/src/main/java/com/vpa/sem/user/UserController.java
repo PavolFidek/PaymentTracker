@@ -1,34 +1,36 @@
 package com.vpa.sem.user;
 
 import com.vpa.sem.DTOs.LoginDto;
+import com.vpa.sem.DTOs.RegisterDto;
+import com.vpa.sem.DTOs.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-
 @Controller
-@RequestMapping("api/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
+    @GetMapping("/getUser")
     @ResponseBody
-    public Iterable<User> GetUsers() {
-        return userService.GetUsers();
-    }
-
-    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
-    @ResponseBody
-    public User GetUser() {
+    public UserDto GetUser() {
         return userService.GetUser(1);
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public boolean LoginUser() {
-        return false;
-        //return userService.loginUser(loginDto);
+    @PostMapping("/userLogin")
+    @ResponseBody
+    public UserDto LoginUser(@RequestBody LoginDto loginDto) {
+
+        return userService.LoginUser(loginDto);
     }
 
+    @PostMapping("/userRegister")
+    @ResponseBody
+    public UserDto RegisterUser(@RequestBody RegisterDto registerDto) {
+
+        return userService.RegisterNewUser(registerDto);
+    }
 }

@@ -12,11 +12,11 @@ export class ProjectService {
   ) { }
 
   login(loginData: LoginData): Observable<boolean> {
-    return this.httpClient.post<any>(`/userLogin`, loginData);
+    return this.httpClient.post<any>(this.userUrl + `/userLogin`, loginData);
   }
 
   registerUser(registerData: RegisterData): Observable<boolean> {
-    return null;
+    return this.httpClient.post<any>(this.userUrl + `/userRegister`, registerData);
   }
 
   /*
