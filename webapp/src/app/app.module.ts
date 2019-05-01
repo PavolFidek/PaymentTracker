@@ -21,6 +21,7 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { AccordionModule } from 'primeng/accordion';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PasswordModule } from 'primeng/password';
 
 const appRoutes: Routes = [
   { path: 'register', component: RegisterUserComponent },
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     MessagesModule,
     MessageModule,
-    AccordionModule
+    AccordionModule,
+    PasswordModule
   ],
   providers: [ ProjectService ],
   bootstrap: [ AppComponent ],

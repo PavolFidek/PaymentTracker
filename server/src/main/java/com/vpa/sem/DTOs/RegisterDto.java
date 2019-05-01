@@ -2,54 +2,54 @@ package com.vpa.sem.DTOs;
 
 public class RegisterDto {
 
-    private String userFirstName;
+    private String firstName;
 
-    private String userLastName;
+    private String lastName;
 
-    private String userLogin;
+    private String login;
 
-    private String userPassword;
+    private String password;
 
     private double payoutAmount;
 
-    public RegisterDto(String userFirstName, String userLastName, String userLogin, String userPassword, double payoutAmount) {
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.userLogin = userLogin;
-        this.userPassword = userPassword;
+    public RegisterDto(String firstName, String lastName, String login, String password, double payoutAmount) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.login = login;
+        this.password = password;
         this.payoutAmount = payoutAmount;
     }
 
     public String getUserFirstName() {
-        return this.userFirstName;
+        return this.firstName;
     }
 
     public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
+        this.firstName = userFirstName;
     }
 
     public String getUserLastName() {
-        return this.userLastName;
+        return this.lastName;
     }
 
     public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
+        this.lastName = userLastName;
     }
 
     public String getUserLogin() {
-        return this.userLogin;
+        return this.login;
     }
 
     public void setUserLogin(String userLogin) {
-        this.userLogin = userLogin;
+        this.login = userLogin;
     }
 
     public String getUserPassword() {
-        return this.userPassword;
+        return this.password;
     }
 
     public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
+        this.password = userPassword;
     }
 
     public double getPayoutAmount() {

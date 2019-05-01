@@ -12,6 +12,9 @@ export interface User {
 }
 
 export interface RegisterData {
+  firstName: string;
+  lastName: string;
   login: string;
   password: string;
+  payoutAmount: number;
 }

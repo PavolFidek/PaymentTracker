@@ -4,15 +4,22 @@ package com.vpa.sem.user;
 import com.vpa.sem.DTOs.LoginDto;
 import com.vpa.sem.DTOs.RegisterDto;
 import com.vpa.sem.DTOs.UserDto;
+import com.vpa.sem.role.Role;
+import com.vpa.sem.role.RoleRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private RoleRepository roleRepository;
 
     private ModelMapper modelMapper;
 
@@ -35,13 +42,13 @@ public class UserService {
     }
 
     public UserDto RegisterNewUser(RegisterDto registerDto) {
-        User newUser = modelMapper.map(registerDto, User.class);
+        User newUser = modelMapper.map(registerDto, User.class); // Mapping dto to entity
 
-        /*newUser.setFirstName(registerDto.getUserFirstName());
-        newUser.setLastName(registerDto.getUserLastName());
-        newUser.setLogin(registerDto.getUserLogin());
-        newUser.setPayoutAmount(registerDto.getPayoutAmount());
-*/
+        List<Role> adminRole = (List<Role>) roleRepository.findAll();
+
+        newUser.setRole(adminRole);
+
+        userRepository.save(newUser);
 
         UserDto userDto = modelMapper.map(newUser, UserDto.class);
 
@@ -52,7 +59,7 @@ public class UserService {
         String login = loginDto.getLogin();
         String pass = loginDto.getPassword();
 
-        return new UserDto();
+        return new UserDto(1, "", "", 3);
     }
 
 }

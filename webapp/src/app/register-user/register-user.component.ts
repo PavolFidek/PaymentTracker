@@ -23,24 +23,28 @@ export class RegisterUserComponent implements OnInit {
 
   setForm() {
     this.registerForm = this.formBuilder.group({
+      firstName: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      lastName: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
+      payoutAmount: new FormControl('', Validators.compose([
+        Validators.required,
+      ])),
       login: new FormControl('', Validators.compose([
         Validators.required,
       ])),
       password: new FormControl('', Validators.compose([
         Validators.required,
-      ])),
-      passwordRepeat: new FormControl('', Validators.compose([
-        Validators.required,
+        Validators.minLength(8)
       ]))
     })
   }
 
   register() {
     if (this.registerForm.valid) {
-      this.projectService.registerUser({
-        login: this.registerForm.controls.login.value,
-        password: this.registerForm.controls.password.value
-      })
+      this.projectService.registerUser(this.registerForm.value)
       .subscribe(res => {
         // registred
       },

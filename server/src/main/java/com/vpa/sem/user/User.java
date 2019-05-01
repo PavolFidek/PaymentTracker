@@ -1,66 +1,66 @@
 package com.vpa.sem.user;
 
-import com.vpa.sem.Entities.Role;
+import com.vpa.sem.role.Role;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name = "Users")
+@Table(name = "users")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private int userId;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
-    @Column(name = "first_name")
+    @Column(nullable = false)
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(nullable = false)
     private String lastName;
 
-    @Column(name = "login")
+    @Column(nullable = false, unique = true)
     private String login;
-    
-    @Column(name = "password")
+
+    @Column(nullable = false)
+    private String salt;
+
+    @Column(nullable = false)
     private String password;
 
-    @Column(name = "payout_amount")
+    @Column(nullable = false)
     private double payoutAmount;
 
-    @OneToOne
-    private Role role;
+    @ManyToMany
+    @JoinTable(
+            name = "user_role",
+            joinColumns = {@JoinColumn(name = "USER_ID", referencedColumnName = "ID")},
+            inverseJoinColumns = {@JoinColumn(name = "ROLE_ID", referencedColumnName = "ID")}
+    )
+    private Set<Role> roles;
 
     public User() {
     }
 
-    public User(int userId, String firstName, String lastName, String login, double payoutAmount, Role role) {
-        this.userId = userId;
+    public User(String firstName, String lastName, String login, String password, double payoutAmount, Set<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
+        this.password = password;
         this.payoutAmount = payoutAmount;
-        this.role = role;
+        this.roles = roles;
     }
 
-    public Role getRole() {
-        return this.role;
+    public int getId() {
+        return id;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public int getUserId() {
-        return this.userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
-        return this.firstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -68,7 +68,7 @@ public class User {
     }
 
     public String getLastName() {
-        return this.lastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
@@ -76,15 +76,23 @@ public class User {
     }
 
     public String getLogin() {
-        return this.login;
+        return login;
     }
 
     public void setLogin(String login) {
         this.login = login;
     }
 
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
     public String getPassword() {
-        return this.password;
+        return password;
     }
 
     public void setPassword(String password) {
@@ -92,10 +100,18 @@ public class User {
     }
 
     public double getPayoutAmount() {
-        return this.payoutAmount;
+        return payoutAmount;
     }
 
     public void setPayoutAmount(double payoutAmount) {
         this.payoutAmount = payoutAmount;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
