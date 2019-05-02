@@ -1,9 +1,8 @@
-package com.vpa.sem.role;
+package com.vpa.sem.paymentType;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RoleRepository extends CrudRepository<Role, Integer> {
-
+public interface PaymentTypeRepository extends CrudRepository<PaymentType, Integer> {
 }

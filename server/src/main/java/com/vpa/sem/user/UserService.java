@@ -27,8 +27,8 @@ public class UserService {
         this.modelMapper = modelMapper;
     }
 
-    public Iterable<User> GetUsers() {
-        Iterable<User> users = userRepository.findAll();
+    public List<User> GetUsers() {
+        List<User> users = (List<User>) userRepository.findAll();
 
         return users;
     }
@@ -46,7 +46,7 @@ public class UserService {
 
         List<Role> adminRole = (List<Role>) roleRepository.findAll();
 
-        newUser.setRole(adminRole);
+        newUser.setRoles(adminRole);
 
         userRepository.save(newUser);
 

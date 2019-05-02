@@ -1,17 +1,17 @@
 package com.vpa.sem.user;
 
+import com.vpa.sem.payment.Payment;
 import com.vpa.sem.role.Role;
-
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column(nullable = false)
     private String firstName;
@@ -37,12 +37,15 @@ public class User {
             joinColumns = {@JoinColumn(name = "USER_ID", referencedColumnName = "ID")},
             inverseJoinColumns = {@JoinColumn(name = "ROLE_ID", referencedColumnName = "ID")}
     )
-    private Set<Role> roles;
+    private List<Role> roles;
+
+    @OneToMany(mappedBy = "user")
+    private List<Payment> payments;
 
     public User() {
     }
 
-    public User(String firstName, String lastName, String login, String password, double payoutAmount, Set<Role> roles) {
+    public User(String firstName, String lastName, String login, String password, double payoutAmount, List<Role> roles) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.login = login;
@@ -107,11 +110,19 @@ public class User {
         this.payoutAmount = payoutAmount;
     }
 
-    public Set<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
     }
 }
