@@ -12,7 +12,7 @@ public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id; // PK
+    private Long id; // PK
 
     @ManyToOne
     @JoinColumn(name = "USER_ID", referencedColumnName = "ID")
@@ -42,7 +42,7 @@ public class Payment {
     public Payment() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

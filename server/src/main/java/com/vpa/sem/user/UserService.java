@@ -8,6 +8,7 @@ import com.vpa.sem.role.Role;
 import com.vpa.sem.role.RoleRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,11 +22,11 @@ public class UserService {
     @Autowired
     private RoleRepository roleRepository;
 
+    @Autowired
     private ModelMapper modelMapper;
 
-    public UserService(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
-    }
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public List<User> GetUsers() {
         List<User> users = (List<User>) userRepository.findAll();
@@ -44,10 +45,17 @@ public class UserService {
     public UserDto RegisterNewUser(RegisterDto registerDto) {
         User newUser = modelMapper.map(registerDto, User.class); // Mapping dto to entity
 
+        if (false) {
+            return new UserDto();
+        }
+
         List<Role> adminRole = (List<Role>) roleRepository.findAll();
+
+        newUser.setPassword(passwordEncoder.encode(registerDto.getUserPassword()));
 
         newUser.setRoles(adminRole);
 
+        // Save new user into database
         userRepository.save(newUser);
 
         UserDto userDto = modelMapper.map(newUser, UserDto.class);
@@ -59,7 +67,7 @@ public class UserService {
         String login = loginDto.getLogin();
         String pass = loginDto.getPassword();
 
-        return new UserDto(1, "", "", 3);
+        return new UserDto(1L, "", "", 3);
     }
 
 }

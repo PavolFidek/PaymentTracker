@@ -2,7 +2,7 @@ package com.vpa.sem.DTOs;
 
 public class UserDto {
 
-    private int userId;
+    private Long id;
 
     private String firstName;
 
@@ -10,19 +10,22 @@ public class UserDto {
 
     private double payoutAmount;
 
-    public UserDto(int userId, String firstName, String lastName, double payoutAmount) {
-        this.userId = userId;
+    public UserDto(Long id, String firstName, String lastName, double payoutAmount) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.payoutAmount = payoutAmount;
     }
 
-    public int getUserId() {
-        return this.userId;
+    public UserDto() {
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

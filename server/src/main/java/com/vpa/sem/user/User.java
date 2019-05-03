@@ -11,7 +11,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false)
     private String firstName;
@@ -21,9 +21,6 @@ public class User {
 
     @Column(nullable = false, unique = true)
     private String login;
-
-    @Column(nullable = false)
-    private String salt;
 
     @Column(nullable = false)
     private String password;
@@ -54,16 +51,12 @@ public class User {
         this.roles = roles;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public Long getId() {
+        return this.id;
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -71,7 +64,7 @@ public class User {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -79,23 +72,15 @@ public class User {
     }
 
     public String getLogin() {
-        return login;
+        return this.login;
     }
 
     public void setLogin(String login) {
         this.login = login;
     }
 
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
@@ -103,7 +88,7 @@ public class User {
     }
 
     public double getPayoutAmount() {
-        return payoutAmount;
+        return this.payoutAmount;
     }
 
     public void setPayoutAmount(double payoutAmount) {
@@ -111,7 +96,7 @@ public class User {
     }
 
     public List<Role> getRoles() {
-        return roles;
+        return this.roles;
     }
 
     public void setRoles(List<Role> roles) {
@@ -119,7 +104,7 @@ public class User {
     }
 
     public List<Payment> getPayments() {
-        return payments;
+        return this.payments;
     }
 
     public void setPayments(List<Payment> payments) {

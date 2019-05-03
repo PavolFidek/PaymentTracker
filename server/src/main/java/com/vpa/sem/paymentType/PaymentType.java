@@ -11,7 +11,7 @@ public class PaymentType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String name;
@@ -25,8 +25,8 @@ public class PaymentType {
         this.name = name;
     }
 
-    public Integer getId() {
-        return id;
+    public Long getId() {
+        return this.id;
     }
 
     public String getName() {
