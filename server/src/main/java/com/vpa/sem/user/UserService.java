@@ -1,6 +1,5 @@
 package com.vpa.sem.user;
 
-
 import com.vpa.sem.DTOs.LoginDto;
 import com.vpa.sem.DTOs.RegisterDto;
 import com.vpa.sem.DTOs.UserDto;
@@ -8,6 +7,11 @@ import com.vpa.sem.role.Role;
 import com.vpa.sem.role.RoleRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -28,11 +32,11 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public List<User> GetUsers() {
-        List<User> users = (List<User>) userRepository.findAll();
+    @Autowired
+    private UserDetailsService userDetailsService;
 
-        return users;
-    }
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     public UserDto GetUser(int userId) {
         User user = userRepository.findById(userId).get();
@@ -45,18 +49,21 @@ public class UserService {
     public UserDto RegisterNewUser(RegisterDto registerDto) {
         User newUser = modelMapper.map(registerDto, User.class); // Mapping dto to entity
 
-        if (false) {
-            return new UserDto();
+        User existingUser = userRepository.findByLogin(newUser.getLogin()); // Find if exist user with given login already
+
+        if (existingUser != null) {
+            return new UserDto(-1L, "", "", -1);
         }
 
-        List<Role> adminRole = (List<Role>) roleRepository.findAll();
+        // List<Role> adminRole = (List<Role>) roleRepository.findAll(); // Role for admin, contains all roles
+        List<Role> userRole = roleRepository.GetRole("USER");
 
         newUser.setPassword(passwordEncoder.encode(registerDto.getUserPassword()));
 
-        newUser.setRoles(adminRole);
+        // newUser.setRoles(adminRole); // Set roles for admin
+        newUser.setRoles(userRole);
 
-        // Save new user into database
-        userRepository.save(newUser);
+        userRepository.save(newUser); // Save new user into database
 
         UserDto userDto = modelMapper.map(newUser, UserDto.class);
 
@@ -64,10 +71,22 @@ public class UserService {
     }
 
     public UserDto LoginUser(LoginDto loginDto) {
-        String login = loginDto.getLogin();
-        String pass = loginDto.getPassword();
+        UserDetails userDetails = userDetailsService.loadUserByUsername(loginDto.getLogin());
 
-        return new UserDto(1L, "", "", 3);
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+                new UsernamePasswordAuthenticationToken(userDetails, loginDto.getPassword(), userDetails.getAuthorities());
+
+        authenticationManager.authenticate(usernamePasswordAuthenticationToken);
+
+        if (usernamePasswordAuthenticationToken.isAuthenticated()) {
+            SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
+        }
+
+        User loggedUser = userRepository.findByLogin(loginDto.getLogin());
+
+        UserDto userDto = modelMapper.map(loggedUser, UserDto.class);
+
+        return userDto;
     }
 
 }
