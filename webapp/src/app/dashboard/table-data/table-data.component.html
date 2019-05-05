@@ -1,0 +1,39 @@
+<table class="table table-striped" *ngIf="PAYMENTS != null">
+  <thead>
+  <tr>
+    <th scope="col" width="100px"></th>
+    <th scope="col" width="200px">Type</th>
+    <th scope="col" width="200px">Amount</th>
+    <th scope="col" width="250px">Realization Date</th>
+    <th scope="col" width="600px">Note</th>
+    <th scope="col" width="150px">Operation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let payment of payments">
+    <td class="icon" [ngSwitch]="payment.type.id">
+      <span class="fas fa-utensils" *ngSwitchCase="1"></span>
+      <span class="fas fa-glass-cheers" *ngSwitchCase="2"></span>
+      <span class="fas fa-tools" *ngSwitchCase="3"></span>
+      <span class="fas fa-headphones" *ngSwitchCase="4"></span>
+      <span class="fas fa-shopping-basket" *ngSwitchCase="5"></span>
+      <span class="fas fa-gas-pump" *ngSwitchCase="6"></span>
+      <span class="fas fa-file-invoice-dollar" *ngSwitchCase="7"></span>
+    </td>
+    <td>{{ payment.type.name}}</td>
+    <td>{{ payment.amount | number}}&nbsp;&euro;</td>
+    <td>{{ payment.realizationDate | date: 'dd/MMMM/yyyy' }}</td>
+    <td>{{ payment.note }}</td>
+    <td>
+      <span class="far fa-edit" (click)="update(payment.id)"></span>&nbsp;|&nbsp;
+      <span class="far fa-trash-alt" (click)="delete(payment.id)"></span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize">
+  </ngb-pagination>
+  <button class="new-btn" pButton type="button" (click)="newPayment()" label="Add payment"></button>
+</div>

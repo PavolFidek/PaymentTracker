@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
+
 // PrimeNG imports
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
@@ -22,12 +23,21 @@ import { MessageModule } from 'primeng/message';
 import { AccordionModule } from 'primeng/accordion';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PasswordModule } from 'primeng/password';
+import { DataListModule } from 'primeng/datalist';
+import { ChartModule } from 'primeng/chart';
+import { TableDataComponent } from './dashboard/table-data/table-data.component';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+
+import { CreatePaymentModalComponent } from './shared/create-payment-modal/create-payment-modal.component';
+import { UpdatePaymentModalComponent } from './shared/update-payment-modal/update-payment-modal.component';
 
 const appRoutes: Routes = [
   { path: 'register', component: RegisterUserComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'userLogin', component: LoginUserComponent },
-  { path: '**', redirectTo: '/userLogin' }
+  { path: '**', redirectTo: '/userLogin' },
+  { path: '', redirectTo: 'userLogin', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -36,13 +46,16 @@ const appRoutes: Routes = [
     RegisterUserComponent,
     LoginUserComponent,
     DashboardComponent,
+    TableDataComponent,
+    CreatePaymentModalComponent,
+    UpdatePaymentModalComponent
   ],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     NgbModule.forRoot(),
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes, { useHash: true }),
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -53,10 +66,17 @@ const appRoutes: Routes = [
     MessagesModule,
     MessageModule,
     AccordionModule,
-    PasswordModule
+    PasswordModule,
+    DataListModule,
+    ChartModule,
+    DropdownModule,
+    CalendarModule
   ],
   providers: [ ProjectService ],
   bootstrap: [ AppComponent ],
-  entryComponents: [] // TODO add start component
+  entryComponents: [
+    CreatePaymentModalComponent,
+    UpdatePaymentModalComponent
+  ]
 })
 export class AppModule { }

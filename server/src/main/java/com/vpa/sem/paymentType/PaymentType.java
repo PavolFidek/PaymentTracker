@@ -1,5 +1,6 @@
 package com.vpa.sem.paymentType;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vpa.sem.payment.Payment;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class PaymentType {
     private String name;
 
     @OneToMany(mappedBy = "type")
+    @JsonIgnore
     private List<Payment> payments;
 
     public PaymentType() { }

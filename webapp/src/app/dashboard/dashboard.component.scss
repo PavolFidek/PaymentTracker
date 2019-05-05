@@ -1,0 +1,42 @@
+.graph {
+  height: 350px;
+  width: 450px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.balance {
+  position: absolute;
+  top: 0;
+  padding-top: 19px;
+  padding-left: 190px;
+}
+
+.positive {
+  color: #35e005;
+}
+
+.negative {
+  color: #ee0c19;
+}
+
+.dashboard-content {
+  padding-top: 230px;
+}
+
+.user-name {
+  position: absolute;
+  color: white;
+  top: 0;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 20px;
+  padding-right: 15px;
+}

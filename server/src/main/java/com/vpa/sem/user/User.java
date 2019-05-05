@@ -1,5 +1,6 @@
 package com.vpa.sem.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vpa.sem.payment.Payment;
 import com.vpa.sem.role.Role;
 import javax.persistence.*;
@@ -34,9 +35,11 @@ public class User {
             joinColumns = {@JoinColumn(name = "USER_ID", referencedColumnName = "ID")},
             inverseJoinColumns = {@JoinColumn(name = "ROLE_ID", referencedColumnName = "ID")}
     )
+    @JsonIgnore
     private List<Role> roles;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<Payment> payments;
 
     public User() {

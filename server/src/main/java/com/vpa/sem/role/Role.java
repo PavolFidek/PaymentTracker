@@ -1,5 +1,6 @@
 package com.vpa.sem.role;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vpa.sem.user.User;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class Role {
     private String name;
 
     @ManyToMany(mappedBy = "roles")
+    @JsonIgnore
     private List<User> users;
 
     public Role() {

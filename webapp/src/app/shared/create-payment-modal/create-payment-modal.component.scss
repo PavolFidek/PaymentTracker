@@ -1,0 +1,32 @@
+.login-window {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  transform: translate(-50%);
+}
+
+.footer {
+  position: relative;
+  left: 40%;
+}
+
+.amount-input {
+  margin-top: 30px;
+  padding-left: 35px;
+}
+
+.type-input {
+  padding-top: 25px;
+  padding-left: 35px;
+}
+
+.realizationDate-input {
+  padding-top: 25px;
+  padding-left: 35px;
+}
+
+.note-input {
+  padding-top: 25px;
+  padding-left: 35px;
+  margin-bottom: 20px;
+}

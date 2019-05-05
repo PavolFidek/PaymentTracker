@@ -1,0 +1,40 @@
+<p-card class="login-window" title="ADD NEW PAYMENT" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+  <p-header>
+  </p-header>
+  <form [formGroup]="this.paymentForm">
+    <!--Amount-->
+    <div class="amount-input">
+      <span class="ui-float-label">
+        <input id="amount" formControlName="amount" name="amount" type="number" min="0" size="30" pInputText>
+        <label for="float-input">Amount</label>
+      </span>
+    </div>
+
+    <!--Type-->
+    <div class="type-input">
+      <span class="ui-float-label">
+        <p-dropdown [options]="types" formControlName="type" placeholder="Select a type" optionLabel="name"
+          [showClear]="false"></p-dropdown>
+      </span>
+    </div>
+
+    <!--Realization date-->
+    <div class="realizationDate-input">
+      <span class="ui-float-label">
+        <p-calendar formControlName="realizationDate" dateFormat="dd.mm.yy" [minDate]="minDateValue" [maxDate]="maxDateValue"></p-calendar>
+      </span>
+    </div>
+
+    <!--Note-->
+    <div class="note-input">
+      <span class="ui-float-label">
+        <input id="note" formControlName="note" name="note" type="text" size="30" pInputText maxlength="255">
+        <label for="float-input">Note</label>
+      </span>
+    </div>
+
+  </form>
+  <p-footer class="footer">
+    <button pButton type="button" (click)="savePayment()" label="Save"></button>
+  </p-footer>
+</p-card>

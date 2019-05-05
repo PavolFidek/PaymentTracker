@@ -1,4 +1,4 @@
-package com.example.mmdb;
+package com.vpa.sem;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MyMovieDatabaseApplicationTests {
+public class ApplicationContextTests {
 
 	@Test
 	public void contextLoads() {

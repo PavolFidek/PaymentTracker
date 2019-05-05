@@ -9,12 +9,16 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Service
@@ -38,8 +42,28 @@ public class UserService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    public UserDto GetUser(int userId) {
-        User user = userRepository.findById(userId).get();
+    //----------------------------------------------------------------------------------------------------------------//
+
+    public User GetLoggedUser() {
+        User loggedUser = null;
+        UserDetails userData = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+        if (userData != null && SecurityContextHolder.getContext().getAuthentication().isAuthenticated()) {
+            String name = userData.getUsername(); // Get current user login
+            loggedUser = userRepository.findByLogin(name); // Find current user in database by login
+
+            return loggedUser; // If is user logged return his data
+        }
+
+        return loggedUser;
+    }
+
+    public UserDto GetUser() {
+        User user = GetLoggedUser();
+
+        if (user == null) {
+            return new UserDto(-1L, "", "", -1);
+        }
 
         UserDto userDto = modelMapper.map(user, UserDto.class);
 
@@ -89,4 +113,11 @@ public class UserService {
         return userDto;
     }
 
+    public void Logout(HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth != null) {
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+    }
 }

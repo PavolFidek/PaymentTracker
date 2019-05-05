@@ -18,3 +18,16 @@ export interface RegisterData {
   password: string;
   payoutAmount: number;
 }
+
+export interface Payment {
+  id: number;
+  note: string;
+  realizationDate: Date;
+  amount: number;
+  type: string;
+}
+
+export interface PaymentType {
+  id: number;
+  name: string;
+}

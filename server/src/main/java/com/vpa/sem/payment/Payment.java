@@ -1,5 +1,6 @@
 package com.vpa.sem.payment;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.vpa.sem.paymentType.PaymentType;
 import com.vpa.sem.user.User;
 
@@ -29,6 +30,7 @@ public class Payment {
 
     @ManyToOne
     @JoinColumn(name = "PAYMENT_TYPE_ID", referencedColumnName = "ID")
+    @JsonIgnore
     private PaymentType type; // FK to payment_type table
 
     public Payment(User user, String note, Date realizationDate, Double amount, PaymentType type) {
