@@ -21,7 +21,7 @@ export class ProjectService {
   ) { }
 
   // User
-  login(loginData: LoginData): Observable<boolean> {
+  login(loginData: LoginData): Observable<User> {
     return this.httpClient.post<any>(this.userUrl + `/userLogin`, loginData);
   }
 

@@ -3,23 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="5ad69102-443c-41d6-bcf1-dc412d58e579" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/dashboard/table-data/table-data.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/dashboard/table-data/table-data.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/dashboard/table-data/table-data.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/dashboard/table-data/table-data.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/project.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/project.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/project.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/project.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/register-user/register-user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/register-user/register-user.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/register-user/register-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/register-user/register-user.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/shared/create-payment-modal/create-payment-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/shared/create-payment-modal/create-payment-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/shared/update-payment-modal/update-payment-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/shared/update-payment-modal/update-payment-modal.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webapp/src/app/login-user/login-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/login-user/login-user.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,11 +25,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="73" selection-start-line="73" selection-end-line="73" />
+            <state relative-caret-position="410">
+              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -77,18 +75,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/paymentType/PaymentTypeService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -140,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="48" column="83" selection-start-line="48" selection-start-column="83" selection-end-line="48" selection-end-column="83" />
+            <state relative-caret-position="251">
+              <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -189,7 +175,6 @@
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/DTOs/UserDto.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/role/RoleRepository.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailServiceImpl.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/DTOs/PaymentDto.java" />
         <option value="$PROJECT_DIR$/server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/server/src/test/java/com/vpa/sem/MyMovieDatabaseApplicationTests.java" />
@@ -205,11 +190,12 @@
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/paymentType/PaymentTypeController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/WebSecurityConfig.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserRepository.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentService.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentRepository.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java" />
       </list>
     </option>
   </component>
@@ -422,18 +408,18 @@
       <workItem from="1556878038667" duration="4704000" />
       <workItem from="1556962246029" duration="4630000" />
       <workItem from="1556985698192" duration="29723000" />
-      <workItem from="1557151458739" duration="5446000" />
+      <workItem from="1557151458739" duration="6842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122528000" />
+    <option name="totallyTimeSpent" value="123924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -456,7 +442,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32928064" />
-      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.3059777" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.3059777" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -675,16 +661,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/target/test-classes/com/example/mmdb/MyMovieDatabaseApplicationTests.class" />
     <entry file="file://$PROJECT_DIR$/server/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
@@ -838,35 +814,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -889,11 +836,50 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="48" column="83" selection-start-line="48" selection-start-column="83" selection-end-line="48" selection-end-column="83" />
+        <state relative-caret-position="251">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="49" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="121" selection-start-line="121" selection-end-line="121" />
         </state>
       </provider>
     </entry>

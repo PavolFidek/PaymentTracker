@@ -112,6 +112,12 @@ public class UserService {
     }
 
     public UserDto LoginUser(LoginDto loginDto) {
+        User testUserLogin = userRepository.findByLogin(loginDto.getLogin());
+
+        if (testUserLogin == null) {
+            return new UserDto();
+        }
+
         UserDetails userDetails = userDetailsService.loadUserByUsername(loginDto.getLogin());
 
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =

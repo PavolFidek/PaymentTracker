@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginUserComponent implements OnInit {
   public loginForm: FormGroup;
-  public wrongData: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,11 +37,11 @@ export class LoginUserComponent implements OnInit {
       this.projectService.login(this.loginForm.value)
         .subscribe(res => {
           // loged
-          this.wrongData = false;
-          this.router.navigate(['/dashboard']);
-        },
-        error => {
-          this.wrongData = true;
+          if (!!res.id) {
+            this.router.navigate(['/dashboard']);
+          } else {
+            alert('Nesprávne prihlasovacie údaje');
+          }
         });
     } else {
       this.loginForm.controls.login.markAsDirty({ onlySelf: true });
