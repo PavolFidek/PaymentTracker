@@ -57,9 +57,11 @@ export class RegisterUserComponent implements OnInit {
         alert(error);
       })
     } else {
+      this.registerForm.controls.firstName.markAsDirty({ onlySelf: true });
+      this.registerForm.controls.lastName.markAsDirty({ onlySelf: true });
+      this.registerForm.controls.payoutAmount.markAsDirty({ onlySelf: true });
       this.registerForm.controls.login.markAsDirty({ onlySelf: true });
       this.registerForm.controls.password.markAsDirty({ onlySelf: true });
-      this.registerForm.controls.passwordRepeat.markAsDirty({ onlySelf: true });
     }
   }
 

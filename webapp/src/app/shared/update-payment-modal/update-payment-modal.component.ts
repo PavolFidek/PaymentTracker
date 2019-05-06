@@ -63,6 +63,10 @@ export class UpdatePaymentModalComponent implements OnInit {
       error => {
         alert(error);
       });
+    } else {
+      this.paymentForm.controls.realizationDate.markAsDirty({ onlySelf: true });
+      this.paymentForm.controls.amount.markAsDirty({ onlySelf: true });
+      this.paymentForm.controls.type.markAsDirty({ onlySelf: true });
     }
   }
 

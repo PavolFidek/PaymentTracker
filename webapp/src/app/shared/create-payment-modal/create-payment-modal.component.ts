@@ -77,6 +77,10 @@ export class CreatePaymentModalComponent implements OnInit {
         }
       });
       this.actibeModal.close();
+    } else {
+      this.paymentForm.controls.realizationDate.markAsDirty({ onlySelf: true });
+      this.paymentForm.controls.amount.markAsDirty({ onlySelf: true });
+      this.paymentForm.controls.type.markAsDirty({ onlySelf: true });
     }
   }
 

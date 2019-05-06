@@ -68,6 +68,10 @@ export class UpdateUserModalComponent implements OnInit {
         }
       });
       this.actibeModal.close();
+    } else {
+      this.userForm.controls.firstName.markAsDirty({ onlySelf: true });
+      this.userForm.controls.lastName.markAsDirty({ onlySelf: true });
+      this.userForm.controls.payoutAmount.markAsDirty({ onlySelf: true });
     }
   }
 
