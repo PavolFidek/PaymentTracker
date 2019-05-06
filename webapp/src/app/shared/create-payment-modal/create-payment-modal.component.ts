@@ -76,8 +76,8 @@ export class CreatePaymentModalComponent implements OnInit {
           alert(error);
         }
       });
+      this.actibeModal.close();
     }
-    this.actibeModal.close();
   }
 
   goLogin() {

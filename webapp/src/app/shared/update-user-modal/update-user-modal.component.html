@@ -1,0 +1,34 @@
+<p-card class="login-window" title="CHANGE USER DATA" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+  <p-header>
+  </p-header>
+  <form [formGroup]="this.userForm">
+    <!--First name-->
+    <div class="firstName-input">
+      <span class="ui-float-label">
+        <input id="firstName" formControlName="firstName" name="firstName" type="text" size="30" pInputText>
+        <label for="float-input">First name</label>
+      </span>
+    </div>
+
+    <!--lastName-->
+    <div class="lastName-input">
+      <span class="ui-float-label">
+        <input id="lastName" formControlName="lastName" name="lastName" type="text" size="30" pInputText>
+        <label for="float-input">Last name</label>
+      </span>
+    </div>
+
+    <!--Payout Amount-->
+    <div class="payoutAmount-input">
+      <span class="ui-float-label">
+        <input id="payoutAmount" formControlName="payoutAmount" name="payoutAmount" type="number" min="0" size="30"
+          pInputText>
+        <label for="float-input">Payout amount</label>
+      </span>
+    </div>
+
+  </form>
+  <p-footer class="footer">
+    <button pButton type="button" (click)="updateUser()" label="Save"></button>
+  </p-footer>
+</p-card>

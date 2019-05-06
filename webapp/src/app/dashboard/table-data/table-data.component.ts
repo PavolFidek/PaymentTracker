@@ -5,7 +5,6 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CreatePaymentModalComponent } from 'app/shared/create-payment-modal/create-payment-modal.component';
 import { UpdatePaymentModalComponent } from 'app/shared/update-payment-modal/update-payment-modal.component';
 import { Router } from '@angular/router';
-import { t } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-table-data',

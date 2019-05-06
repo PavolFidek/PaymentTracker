@@ -4,10 +4,17 @@ export interface LoginData {
 }
 
 export interface User {
-  userId: number;
+  id: number;
   firstName: string;
   lastName: string;
   login: string;
+  payoutAmount: number;
+}
+
+export interface UserUpdate {
+  id: number;
+  firstName: string;
+  lastName: string;
   payoutAmount: number;
 }
 

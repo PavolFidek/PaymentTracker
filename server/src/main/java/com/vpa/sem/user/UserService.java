@@ -70,6 +70,23 @@ public class UserService {
         return userDto;
     }
 
+    public UserDto UpdateUser(UserDto userDto) {
+        User editedUser = modelMapper.map(userDto, User.class);
+
+        userRepository.updateUser(
+                userDto.getId(),
+                editedUser.getFirstName(),
+                editedUser.getLastName(),
+                editedUser.getPayoutAmount()
+        );
+
+        editedUser = userRepository.findByLongId(userDto.getId());
+
+        UserDto userToReturn = modelMapper.map(editedUser, UserDto.class);
+
+        return userDto;
+    }
+
     public UserDto RegisterNewUser(RegisterDto registerDto) {
         User newUser = modelMapper.map(registerDto, User.class); // Mapping dto to entity
 

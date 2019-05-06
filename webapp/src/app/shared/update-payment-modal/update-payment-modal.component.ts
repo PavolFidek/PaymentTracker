@@ -95,8 +95,8 @@ export class UpdatePaymentModalComponent implements OnInit {
           alert(error);
         }
       });
+      this.actibeModal.close();
     }
-    this.actibeModal.close();
   }
 
   goLogin() {

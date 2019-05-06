@@ -21,13 +21,12 @@
     <!--Payout amount input-->
     <div class="row-input">
       <span class="ui-float-label">
-        <input id="payoutAmount" formControlName="payoutAmount" name="payoutAmount" type="number" min="0" size="30" pInputText>
+        <input id="payoutAmount" formControlName="payoutAmount" name="payoutAmount" type="number" min="0" size="30"
+          pInputText>
         <label for="float-input">Payout amount (€)</label>
       </span>
     </div>
-
     <br>
-
     <!--Login input-->
     <div class="row-input">
       <span class="ui-float-label">
@@ -43,19 +42,10 @@
         <label for="float-input">Password</label>
       </span>
     </div>
-
-    <!--Confirm password input-->
-    <!--<div class="passwordRepeat-input">
-      <span class="ui-float-label">
-        <input id="passwordRepeat" formControlName="passwordRepeat" name="passwordRepeat" type="password" size="30"
-          pInputText>
-        <label for="float-input">Confirm Password</label>
-      </span>
-    </div>-->
   </form>
 
   <p-footer class="footer">
     <button pButton type="button" (click)="register()" label="Register" class="ui-button-info"></button>
-    <button pButton type="button" (click)="goBack()" label="Cancel" class="ui-button-danger"></button>
+    <button pButton type="button" (click)="goLoginPage()" label="Cancel" class="ui-button-danger"></button>
   </p-footer>
 </p-card>

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { User, Payment } from 'app/project.model';
 import { ProjectService } from 'app/project.service';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UpdateUserModalComponent } from 'app/shared/update-user-modal/update-user-modal.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,23 +17,37 @@ export class DashboardComponent implements OnInit {
   public paymentAmount: number;
   public collectionSize: number;
   public paymentAmountAllSum: number;
+  public date: Date = new Date();
+  public shiftMonth = 0;
 
   constructor(
     private projectService: ProjectService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal,
   ) { }
 
   ngOnInit() {
     this.getPayments();
 
     this.projectService.refreshData$
-    .subscribe(data => {
-      if (!!data) {
-        this.PAYMENTS = data;
-        this.paymentAmountAllSum = this.paymentAmountSum();
-        this.setData();
-      }
-    });
+      .subscribe(data => {
+        if (!!data) {
+          this.PAYMENTS = data;
+          this.paymentAmountAllSum = this.paymentAmountSum();
+          if (this.user == null) {
+            this.getCurrentUser();
+          } else {
+            this.setData();
+          }
+        }
+      });
+
+    this.projectService.changeUser$
+      .subscribe(userData => {
+        if (!!userData) {
+          this.user = userData;
+        }
+      });
   }
 
   getCurrentUser() {
@@ -87,6 +103,21 @@ export class DashboardComponent implements OnInit {
     };
   }
 
+  updateuser() {
+    const modalRef = this.modalService.open(UpdateUserModalComponent);
+    modalRef.componentInstance.action
+      .subscribe((value) => {
+        this.projectService.changeUserData(value);
+      },
+        error => {
+          if (error.status === 403) {
+            this.goToLoginPage();
+          } else {
+            alert(error);
+          }
+        });
+  }
+
   getSavings(): number {
     return this.user.payoutAmount - this.paymentAmountAllSum;
   }
@@ -111,16 +142,16 @@ export class DashboardComponent implements OnInit {
 
   logout() {
     this.projectService.logout()
-    .subscribe(res => {
-      this.goToLoginPage();
-    },
-    error => {
-      if (error.status === 403) {
+      .subscribe(res => {
         this.goToLoginPage();
-      } else {
-        alert(error);
-      }
-    })
+      },
+        error => {
+          if (error.status === 403) {
+            this.goToLoginPage();
+          } else {
+            alert(error);
+          }
+        })
   }
 
 }

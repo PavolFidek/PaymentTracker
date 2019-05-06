@@ -21,6 +21,12 @@ public class UserController {
         return userService.GetUser();
     }
 
+    @PostMapping("/update")
+    public UserDto UpdateUser(@RequestBody UserDto userDto) {
+
+        return userService.UpdateUser(userDto);
+    }
+
     @PostMapping("/userLogin")
     public UserDto LoginUser(@RequestBody LoginDto loginDto) {
 

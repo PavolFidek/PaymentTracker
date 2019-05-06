@@ -6,11 +6,20 @@
   transform: translate(-50%);
 }
 
+.fas {
+  color: white;
+  padding-right: 10px;
+}
+
+.fas:hover {
+  cursor: pointer;
+}
+
 .balance {
   position: absolute;
   top: 0;
   padding-top: 19px;
-  padding-left: 190px;
+  padding-left: 250px;
 }
 
 .positive {

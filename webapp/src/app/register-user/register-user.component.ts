@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { ProjectService } from 'app/project.service';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-user',
@@ -14,7 +14,7 @@ export class RegisterUserComponent implements OnInit {
   constructor(
     private projectService: ProjectService,
     private formBuilder: FormBuilder,
-    private location: Location
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -47,9 +47,14 @@ export class RegisterUserComponent implements OnInit {
       this.projectService.registerUser(this.registerForm.value)
       .subscribe(res => {
         // registred
+        if (res.id !== -1) {
+          this.goLoginPage();
+        } else {
+          alert('User with given login exist already');
+        }
       },
       error => {
-        // failed
+        alert(error);
       })
     } else {
       this.registerForm.controls.login.markAsDirty({ onlySelf: true });
@@ -58,7 +63,7 @@ export class RegisterUserComponent implements OnInit {
     }
   }
 
-  goBack() {
-    this.location.back();
+  goLoginPage() {
+    this.router.navigate(['/userLogin']);
   }
 }

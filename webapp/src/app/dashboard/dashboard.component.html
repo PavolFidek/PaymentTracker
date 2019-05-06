@@ -1,12 +1,15 @@
 <div *ngIf="user != null">
   <div class="user-name">
-    <h3>{{ user.firstName }}&nbsp;{{ user.lastName }}</h3>
+    <h3>&nbsp;{{ user.firstName }}&nbsp;{{ user.lastName }}</h3>
   </div>
   <div class="balance">
-    <h4 [ngClass]="positiveBalance() ? 'positive' : 'negative'" *ngIf="positiveBalance() === true">{{ getSavings() }}&euro;</h4>
-    <h4 [ngClass]="positiveBalance() ? 'positive' : 'negative'" *ngIf="positiveBalance() === false">{{ getSavings() }}&euro;</h4>
+    <h4 [ngClass]="positiveBalance() ? 'positive' : 'negative'" *ngIf="positiveBalance() === true">
+      {{ getSavings() }}&euro;</h4>
+    <h4 [ngClass]="positiveBalance() ? 'positive' : 'negative'" *ngIf="positiveBalance() === false">
+      {{ getSavings() }}&euro;</h4>
   </div>
   <div class="logout-btn">
+    <span class="fas fa-cog fa-lg" (click)="updateuser()"></span>
     <button pButton type="button" (click)="logout()" label="Logout" class="ui-button-danger"></button>
   </div>
   <div class="dashboard-header" class="graph">

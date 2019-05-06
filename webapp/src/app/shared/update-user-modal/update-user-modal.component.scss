@@ -1,0 +1,27 @@
+.login-window {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  transform: translate(-50%);
+}
+
+.footer {
+  position: relative;
+  left: 40%;
+}
+
+.lastName-input {
+  padding-top: 25px;
+  padding-left: 35px;
+}
+
+.firstName-input {
+  padding-top: 25px;
+  padding-left: 35px;
+}
+
+.payoutAmount-input {
+  padding-top: 25px;
+  padding-left: 35px;
+  margin-bottom: 20px;
+}

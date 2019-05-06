@@ -14,7 +14,6 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 
-
 // PrimeNG imports
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
@@ -31,6 +30,7 @@ import { CalendarModule } from 'primeng/calendar';
 
 import { CreatePaymentModalComponent } from './shared/create-payment-modal/create-payment-modal.component';
 import { UpdatePaymentModalComponent } from './shared/update-payment-modal/update-payment-modal.component';
+import { UpdateUserModalComponent } from './shared/update-user-modal/update-user-modal.component';
 
 const appRoutes: Routes = [
   { path: 'register', component: RegisterUserComponent },
@@ -48,7 +48,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     TableDataComponent,
     CreatePaymentModalComponent,
-    UpdatePaymentModalComponent
+    UpdatePaymentModalComponent,
+    UpdateUserModalComponent
   ],
   imports: [
     CommonModule,
@@ -72,11 +73,16 @@ const appRoutes: Routes = [
     DropdownModule,
     CalendarModule
   ],
-  providers: [ ProjectService ],
-  bootstrap: [ AppComponent ],
+  providers: [
+    ProjectService
+  ],
+  bootstrap: [
+    AppComponent
+  ],
   entryComponents: [
     CreatePaymentModalComponent,
-    UpdatePaymentModalComponent
+    UpdatePaymentModalComponent,
+    UpdateUserModalComponent
   ]
 })
 export class AppModule { }
