@@ -1,2 +1,2 @@
-# groupShoppingList
-Web application for groups of people, organized shopping list
+# PaymentTracker
+Web application for tracking payments
