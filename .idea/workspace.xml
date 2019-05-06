@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ad69102-443c-41d6-bcf1-dc412d58e579" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/login-user/login-user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/login-user/login-user.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="5ad69102-443c-41d6-bcf1-dc412d58e579" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +23,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="121" selection-start-line="121" selection-end-line="121" />
+            <state relative-caret-position="380">
+              <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
             </state>
           </provider>
         </entry>
@@ -408,18 +403,18 @@
       <workItem from="1556878038667" duration="4704000" />
       <workItem from="1556962246029" duration="4630000" />
       <workItem from="1556985698192" duration="29723000" />
-      <workItem from="1557151458739" duration="6842000" />
+      <workItem from="1557151458739" duration="7027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123924000" />
+    <option name="totallyTimeSpent" value="124109000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -442,7 +437,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32928064" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.3059777" />
+      <window_info active="true" anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.3059777" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -878,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="121" selection-start-line="121" selection-end-line="121" />
+        <state relative-caret-position="380">
+          <caret line="119" lean-forward="true" selection-start-line="119" selection-end-line="119" />
         </state>
       </provider>
     </entry>
