@@ -1,2 +1,2 @@
 # PaymentTracker
-Web application for groups of people, organized shopping list
+Web application for tracking payments
