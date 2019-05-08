@@ -108,6 +108,7 @@ export class DashboardComponent implements OnInit {
     modalRef.componentInstance.action
       .subscribe((value) => {
         this.projectService.changeUserData(value);
+        this.projectService.refreshGraphData(this.PAYMENTS);
       },
         error => {
           if (error.status === 403) {
