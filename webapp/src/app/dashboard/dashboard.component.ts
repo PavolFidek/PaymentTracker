@@ -104,11 +104,15 @@ export class DashboardComponent implements OnInit {
   }
 
   updateuser() {
+    let changePayoutAmount = false;
     const modalRef = this.modalService.open(UpdateUserModalComponent);
     modalRef.componentInstance.action
       .subscribe((value) => {
+        changePayoutAmount = this.user.payoutAmount !== value.payoutAmount;
         this.projectService.changeUserData(value);
-        this.projectService.refreshGraphData(this.PAYMENTS);
+        if (changePayoutAmount) {
+          this.projectService.refreshGraphData(this.PAYMENTS);
+        }
       },
         error => {
           if (error.status === 403) {
