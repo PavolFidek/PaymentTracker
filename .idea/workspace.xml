@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ad69102-443c-41d6-bcf1-dc412d58e579" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/dashboard/dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webapp/src/app/dashboard/table-data/table-data.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/webapp/src/app/dashboard/table-data/table-data.component.html" afterDir="false" />
-    </list>
+    <list default="true" id="5ad69102-443c-41d6-bcf1-dc412d58e579" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/server/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,8 +23,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
+            <state relative-caret-position="1485">
+              <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -172,7 +168,6 @@
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/role/RoleRepository.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailServiceImpl.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/DTOs/PaymentDto.java" />
-        <option value="$PROJECT_DIR$/server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/server/src/test/java/com/vpa/sem/MyMovieDatabaseApplicationTests.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/Payment.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/paymentType/PaymentType.java" />
@@ -192,6 +187,7 @@
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/payment/PaymentRepository.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java" />
+        <option value="$PROJECT_DIR$/server/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -214,7 +210,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -319,6 +314,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -329,7 +325,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557096729183" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557696424198" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -406,17 +402,18 @@
       <workItem from="1557151458739" duration="7027000" />
       <workItem from="1557345425812" duration="432000" />
       <workItem from="1557426069913" duration="673000" />
+      <workItem from="1557695732796" duration="497000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125214000" />
+    <option name="totallyTimeSpent" value="125711000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19027181" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22389127" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -439,7 +436,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32970297" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.32928064" />
-      <window_info anchor="bottom" id="Run Dashboard" order="15" visible="true" weight="0.30483273" />
+      <window_info anchor="bottom" id="Run Dashboard" order="15" weight="0.30483273" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -780,13 +777,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="118" column="9" lean-forward="true" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/UserDetailsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -794,6 +784,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/com/vpa/sem/user/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1485">
+          <caret line="118" column="9" selection-start-line="118" selection-start-column="9" selection-end-line="118" selection-end-column="9" />
         </state>
       </provider>
     </entry>
